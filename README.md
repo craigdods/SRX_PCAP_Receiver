@@ -19,13 +19,13 @@ set security idp idp-policy 'your_IDP_Policy' rulebase-ips rule 'your_rule' then
 
 4. Install script dependencies on the linux collector (Python 2.7 - Ubuntu Server 16.04)
 
-i. Ubuntu Packages
+  i. Ubuntu Packages
 
-$ sudo apt-get install python2.7 python-pip python-dpkt
+  $ sudo apt-get install python2.7 python-pip python-dpkt
 
-ii. Python 2.7 packages
+  ii. Python 2.7 packages
 
-$ pip install twisted
+  $ pip install twisted
 
 # Usage instructions
 

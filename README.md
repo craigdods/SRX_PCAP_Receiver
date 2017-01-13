@@ -1,7 +1,7 @@
 # SRX_PCAP_Receiver
 Open Source IDP PCAP receiver originally created by Oscar Ibatullin.
 
-Used as an alternative to JSA/QRadar for collecting SRX IDP Attack Packets (PCAP) for forensic analysis/incident response.
+Used as an alternative to JSA/STRM/QRadar for collecting SRX IDP Attack Packets (PCAP) for forensic analysis/incident response.
 
 # Installation instructions
 Configure SRX to forward IDP Attack packets (pre and post) to the collector's IP address. The script listens on UDP port 2050 by default but you can change this.

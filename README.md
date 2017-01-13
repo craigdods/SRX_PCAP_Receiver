@@ -1,7 +1,7 @@
 # SRX_PCAP_Receiver
 Open Source IDP PCAP receiver originally created by Oscar Ibatullin.
 
-Used as an alternative to JSA/QRadar for collecting SRX IDP Attack Packets (PCAP)
+Used as an alternative to JSA/QRadar for collecting SRX IDP Attack Packets (PCAP) for forensic analysis/incident response.
 
 # Installation instructions
 Configure SRX to forward IDP Attack packets (pre and post) to the collector's IP address. The script listens on UDP port 2050 by default but you can change this.
@@ -32,7 +32,7 @@ sudo apt-get install python2.7 python-pip python-dpkt
 
 Python 2.7 packages
   ```
-  $ pip install twisted
+pip install twisted
   ```
 
 # Usage instructions

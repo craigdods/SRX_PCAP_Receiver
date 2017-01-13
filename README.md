@@ -12,22 +12,28 @@ set security idp sensor-configuration packet-log host port 2050
 ```
 
 2. If using routing-instances for dataplane connectivity to the collector, you'll need to setup a next-table statement from inet.0
+```
 set routing-options static route 'the_collector's_ip_address' next-table 'your_instance.inet.0'
+```
 
 3. Enable IDP Packet logging on the IDP policy of your choosing
+```
 set security idp idp-policy 'your_IDP_Policy' rulebase-ips rule 'your_rule' then notification packet-log pre-attack 2
 set security idp idp-policy 'your_IDP_Policy' rulebase-ips rule 'your_rule' then notification packet-log post-attack 2
 set security idp idp-policy 'your_IDP_Policy' rulebase-ips rule 'your_rule' then notification packet-log post-attack-timeout 5
+```
 
 4. Install script dependencies on the linux collector (Python 2.7 - Ubuntu Server 16.04)
 
   i. Ubuntu Packages
-
-  $ sudo apt-get install python2.7 python-pip python-dpkt
+```
+sudo apt-get install python2.7 python-pip python-dpkt
+```
 
   ii. Python 2.7 packages
-
+  ```
   $ pip install twisted
+  ```
 
 # Usage instructions
 

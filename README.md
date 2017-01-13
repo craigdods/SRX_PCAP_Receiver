@@ -4,33 +4,33 @@ Open Source IDP PCAP receiver originally created by Oscar Ibatullin.
 Used as an alternative to JSA/QRadar for collecting SRX IDP Attack Packets (PCAP)
 
 # Installation instructions
-1. Configure SRX to forward IDP Attack packets (pre and post) to the collector's IP address. The script listens on UDP port 2050 by default but you can change this.
+Configure SRX to forward IDP Attack packets (pre and post) to the collector's IP address. The script listens on UDP port 2050 by default but you can change this.
 ```
 set security idp sensor-configuration packet-log source-address 'your_source_address'
 set security idp sensor-configuration packet-log host 'the_collector's_ip_address'
 set security idp sensor-configuration packet-log host port 2050 
 ```
 
-2. If using routing-instances for dataplane connectivity to the collector, you'll need to setup a next-table statement from inet.0
+If using routing-instances for dataplane connectivity to the collector, you'll need to setup a next-table statement from inet.0
 ```
 set routing-options static route 'the_collector's_ip_address' next-table 'your_instance.inet.0'
 ```
 
-3. Enable IDP Packet logging on the IDP policy of your choosing
+Enable IDP Packet logging on the IDP policy of your choosing
 ```
 set security idp idp-policy 'your_IDP_Policy' rulebase-ips rule 'your_rule' then notification packet-log pre-attack 2
 set security idp idp-policy 'your_IDP_Policy' rulebase-ips rule 'your_rule' then notification packet-log post-attack 2
 set security idp idp-policy 'your_IDP_Policy' rulebase-ips rule 'your_rule' then notification packet-log post-attack-timeout 5
 ```
 
-4. Install script dependencies on the linux collector (Python 2.7 - Ubuntu Server 16.04)
+Install script dependencies on the linux collector (Python 2.7 - Ubuntu Server 16.04)
 
-  i. Ubuntu Packages
+Ubuntu Packages
 ```
 sudo apt-get install python2.7 python-pip python-dpkt
 ```
 
-  ii. Python 2.7 packages
+Python 2.7 packages
   ```
   $ pip install twisted
   ```

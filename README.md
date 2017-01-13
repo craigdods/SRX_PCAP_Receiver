@@ -5,9 +5,11 @@ Used as an alternative to JSA/QRadar for collecting SRX IDP Attack Packets (PCAP
 
 # Installation instructions
 1. Configure SRX to forward IDP Attack packets (pre and post) to the collector's IP address. The script listens on UDP port 2050 by default but you can change this.
+```
 set security idp sensor-configuration packet-log source-address 'your_source_address'
 set security idp sensor-configuration packet-log host 'the_collector's_ip_address'
-set security idp sensor-configuration packet-log host port 2050
+set security idp sensor-configuration packet-log host port 2050 
+```
 
 2. If using routing-instances for dataplane connectivity to the collector, you'll need to setup a next-table statement from inet.0
 set routing-options static route 'the_collector's_ip_address' next-table 'your_instance.inet.0'

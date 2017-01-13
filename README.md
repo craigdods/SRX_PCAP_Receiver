@@ -67,6 +67,7 @@ total 12K
 Transfer and/or analyze with your favourite packet-analysis tool (Wireshark, tcpdump, tshark, etc)
 ```
 admin@ubuntu16:~/Juniper_IDP_PCAP_Storage/HTTP:STC:JAVA:APPLET-CLASS-FILE$ tcpdump -r 1484344180-229-2.pcap -vv
+
 reading from file 1484344180-229-2.pcap, link-type EN10MB (Ethernet)
 -5:00:00.000000 IP (tos 0x0, ttl 51, id 59053, offset 0, flags [none], proto TCP (6), length 40)
     vhost.phx1.nearlyfreespeech.net.http > 10.1.1.10.63009: Flags [.], cksum 0x5e13 (correct), seq 3215153248, ack 4131619491, win 31461, length 0

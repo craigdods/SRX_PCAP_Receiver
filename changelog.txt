@@ -1,0 +1,22 @@
+#==============================================================================
+# srx_pcap_receiver.py
+# 
+# Created by Oscar Ibatullin on 2012-09-14.
+# Copyright 2017 Juniper Networks. All rights reserved.
+#------------------------------------------------------------------------------
+# Tool to receive packet captures for IDP attack events from Juniper SRX.
+#
+# Changes in version 1.01:
+# - Included installation instructions
+# - Added to GitHub
+# - Modified Naming Scheme
+#
+# Changes in version 1.00:
+# - work as a server receiving pcaps, or process an offline DMI packet capture;
+# - workaround a bug with session intermingling which exists in SRX pcap sender;
+# - fix IP, TCP, UDP checksums in the resulting packet captures;
+# - handle fragmentation (aka DMI type 2 packets).
+#
+# Version last tested: 15.1X49-D70 in January 2017
+#
+# Updated by Craig Dods on 2017-01-13

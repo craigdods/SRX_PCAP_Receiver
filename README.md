@@ -96,7 +96,7 @@ reading from file 1484344180-229-2.pcap, link-type EN10MB (Ethernet)
 
 If you are searching for a specific PCAP in reference to an IDP_ATTACK_LOG_EVENT that Security Director and/or your SIEM has identified, you can correlate that log to its PCAP counterpart by looking for the packet-log-id value within the syslog message (5th last field).
 
-As an example, if I am attempting to locate the PCAP for the event below, I would look first for the directory of the signature  (HTTP:MISC:CVE-2014-6332-OF), and then identify the packet-log of interest (ls -lah | grep 460). The name of each PCAP has the packet-log-id appended to it after the epoch time
+As an example, if I am attempting to locate the PCAP for the event below, I would look first for the directory of the signature  (HTTP:MISC:CVE-2014-6332-OF), and then identify the packet-log of interest (ls -lah | grep 460). The name of each PCAP has the packet-log-id appended to it after the epoch time. It's also possible to search for just the epoch-time listed in the syslog message as well (1484869672).
 ```
 2017-01-19T23:47:58.570Z SRX1500-A RT_IDP - IDP_ATTACK_LOG_EVENT [junos@2636.1.1.1.2.137 epoch-time="1484869672" message-type="SIG" source-address="10.1.1.10" source-port="61478" destination-address="208.94.116.21" destination-port="80" protocol-name="TCP" service-name="SERVICE_IDP" application-name="HTTP" rule-name="3" rulebase-name="IPS" policy-name="Space-IPS-Policy" export-id="17908" repeat-count="0" action="DROP" threat-severity="HIGH" attack-name="HTTP:MISC:CVE-2014-6332-OF" nat-source-address="192.168.0.10" nat-source-port="0" nat-destination-address="0.0.0.0" nat-destination-port="0" elapsed-time="0" inbound-bytes="0" outbound-bytes="0" inbound-packets="0" outbound-packets="0" source-zone-name="Inside" source-interface-name="reth1.0" destination-zone-name="Outside" destination-interface-name="reth0.0" packet-log-id="460" alert="no" username="N/A" roles="N/A" message="-"]
 ```
@@ -104,7 +104,12 @@ As an example, if I am attempting to locate the PCAP for the event below, I woul
 ```
 admin@ubuntu16:~/Juniper_IDP_PCAP_Storage/HTTP:MISC:CVE-2014-6332-OF$ ls -lah | grep 460
 -rw-rw-r-- 1 admin admin 1.9K Jan 19 18:48 1484869672-460-2.pcap
-
+```
+```
+admin@ubuntu16:~/Juniper_IDP_PCAP_Storage/HTTP:MISC:CVE-2014-6332-OF$ ls -lah |grep 1484869672
+-rw-rw-r-- 1 admin admin 1.9K Jan 19 18:48 1484869672-460-2.pcap
+```
+```
 admin@ubuntu16:~/Juniper_IDP_PCAP_Storage/HTTP:MISC:CVE-2014-6332-OF$ tcpdump -r 1484869672-460-2.pcap -vv
 reading from file 1484869672-460-2.pcap, link-type EN10MB (Ethernet)
 -5:00:00.000000 IP (tos 0x0, ttl 51, id 53568, offset 0, flags [none], proto TCP (6), length 336)

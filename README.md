@@ -48,11 +48,15 @@ $ python2.7 srx_pcap_receiver.py &
 Each signature is stored within its own subdirectory, like so:
 ```
 admin@ubuntu16:~/Juniper_IDP_PCAP_Storage$ ls -lah
-total 24K
-drwxrwxr-x 2 admin admin 4.0K Jan 13 16:59 HTTP:MISC:CVE-2014-6332-OF
+total 36K
+drwxrwxr-x 2 admin admin 4.0K Jan 14 09:25 DNS:MS-FOREFRONT-RCE
+drwxrwxr-x 2 admin admin 4.0K Jan 19 18:48 HTTP:MISC:CVE-2014-6332-OF
+drwxrwxr-x 2 admin admin 4.0K Jan 14 08:17 HTTP:STC:HIDDEN-IFRAME-2
+drwxrwxr-x 2 admin admin 4.0K Jan 14 08:17 HTTP:STC:IE:CVE-2016-3351-ID
 drwxrwxr-x 2 admin admin 4.0K Jan 13 16:49 HTTP:STC:JAVA:APPLET-CLASS-FILE
 drwxrwxr-x 2 admin admin 4.0K Jan 13 16:49 SHELLCODE:WIN:SHIKATAGANAI-80S
 drwxrwxr-x 2 admin admin 4.0K Jan 13 16:59 SHELLCODE:X86:DWORD-ADITIVE-80S
+
 ```
 
 Navigate to the signature you'd like to analyze
@@ -99,7 +103,7 @@ As an example, if I am attempting to locate the PCAP for the event below, I woul
 
 ```
 admin@ubuntu16:~/Juniper_IDP_PCAP_Storage/HTTP:MISC:CVE-2014-6332-OF$ ls -lah | grep 460
--rw-rw-r-- 1 craig craig 1.9K Jan 19 18:48 1484869672-460-2.pcap
+-rw-rw-r-- 1 admin admin 1.9K Jan 19 18:48 1484869672-460-2.pcap
 
 admin@ubuntu16:~/Juniper_IDP_PCAP_Storage/HTTP:MISC:CVE-2014-6332-OF$ tcpdump -r 1484869672-460-2.pcap -vv
 reading from file 1484869672-460-2.pcap, link-type EN10MB (Ethernet)

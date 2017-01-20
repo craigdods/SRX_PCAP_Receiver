@@ -65,6 +65,8 @@
 # drwxrwxr-x 2 admin admin 4.0K Jan 13 16:59 SHELLCODE:X86:DWORD-ADITIVE-80S
 # 
 # Navigate to the signature you'd like to analyze
+# You can identify a particular PCAP of interest by comparing the IDP attack syslog (IDP_ATTACK_LOG_EVENT)
+# and look for the value of packet-log-id. The example below was referenced as `packet-log-id="229"`
 #
 # admin@ubuntu16:~/Juniper_IDP_PCAP_Storage$ cd HTTP\:STC\:JAVA\:APPLET-CLASS-FILE/
 # admin@ubuntu16:~/Juniper_IDP_PCAP_Storage/HTTP:STC:JAVA:APPLET-CLASS-FILE$ ls -lah

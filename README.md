@@ -1,4 +1,4 @@
-# SRX_PCAP_Receiver
+# SRX PCAP Receiver
 Open Source IDP PCAP receiver originally created by Oscar Ibatullin.
 
 Used as an alternative to JSA/STRM/QRadar for collecting SRX IDP Attack Packets (PCAP) for forensic analysis/incident response.

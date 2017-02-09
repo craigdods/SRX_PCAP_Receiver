@@ -109,6 +109,7 @@ admin@ubuntu16:~/Juniper_IDP_PCAP_Storage/HTTP:MISC:CVE-2014-6332-OF$ ls -lah | 
 admin@ubuntu16:~/Juniper_IDP_PCAP_Storage/HTTP:MISC:CVE-2014-6332-OF$ ls -lah |grep 1484869672
 -rw-rw-r-- 1 admin admin 1.9K Jan 19 18:48 1484869672-460-2.pcap
 ```
+Or, perhaps the most straight forward way is to use find to recursively search the entire PCAP Storage directory for the specific epoch time:
 ```
 admin@ubuntu16:~/Juniper_IDP_PCAP_Storage$ find . -name 1486656762*
 ./HTTP:MISC:CVE-2014-6332-OF/1486656762-4685-2.pcap

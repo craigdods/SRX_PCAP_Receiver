@@ -112,7 +112,7 @@ admin@ubuntu16:~/Juniper_IDP_PCAP_Storage/HTTP:MISC:CVE-2014-6332-OF$ ls -lah |g
 Or, perhaps the most straight forward way is to use find to recursively search the entire PCAP Storage directory for the specific epoch time and feed it into tcpdump in one go. In the instance below, we're looking for the following event with an Epoch time of 1486656762 and a packet-log-id of 4685 and wish to display it in ASCII mode without resolving hostnames (-nnAvv).
 ```
 admin@ubuntu16:~/Juniper_IDP_PCAP_Storage$ find . -name 1486656762-4685* | xargs -t -I file tcpdump -r file -nnAvv
-tcpdump -r ./HTTP:MISC:CVE-2014-6332-OF/1486656762-4685-2.pcap -nnAvv 
+
 reading from file ./HTTP:MISC:CVE-2014-6332-OF/1486656762-4685-2.pcap, link-type EN10MB (Ethernet)
 -5:00:00.000000 IP (tos 0x0, ttl 51, id 12600, offset 0, flags [none], proto TCP (6), length 336)
     208.94.116.21.80 > 10.1.1.10.51137: Flags [P.], cksum 0xbfb7 (correct), seq 141640169:141640465, ack 54246441, win 32120, length 296: HTTP, length: 296
